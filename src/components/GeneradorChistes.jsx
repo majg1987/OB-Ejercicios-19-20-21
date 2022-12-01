@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Button from '@mui/material/Button';
 import {getJokeRandom} from '../services/apiRequestService'
 
 const GeneradorChistes = () => {
@@ -31,9 +32,12 @@ const GeneradorChistes = () => {
             <h1>Joke Generator</h1>
 
             {/* Generate joke button */}
-            <button onClick={generateJoke}>
+            <Button
+            color='primary' 
+            variant='contained'
+            onClick={generateJoke}>
             Generate Joke
-            </button>
+            </Button>
 
             {/* Joke Generated */}
             {
@@ -42,15 +46,19 @@ const GeneradorChistes = () => {
                     <>
                         <p> {joke} </p>
                         <div>
-                            <button 
+                            <Button
+                            color='success' 
+                            variant='contained'
                             onClick={totalLike}
                             > 
                                 Like {like} 
-                            </button>
-                            <button
+                            </Button>
+                            <Button
+                            color='error' 
+                            variant='contained'
                             onClick={ totalDontLike }
                             > 
-                                I don´t like {dontLike} </button>
+                                I don´t like {dontLike} </Button>
                         </div>
                     </>
                 )
